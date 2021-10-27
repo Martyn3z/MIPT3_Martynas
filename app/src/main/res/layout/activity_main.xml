@@ -5,320 +5,310 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1C1C1C"
-    android:backgroundTint="#2B2B2B"
+    android:backgroundTint="#272727"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.287"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
-
-    <Button
-        android:id="@+id/buttonAdd"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="M+"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="235dp"
-        tools:layout_editor_absoluteY="62dp" />
-
-    <Button
-        android:id="@+id/buttonModule"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="±"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="235dp"
-        tools:layout_editor_absoluteY="127dp" />
-
-    <Button
-        android:id="@+id/buttonFive"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#AC5454"
-        android:text="5"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="257dp" />
-
-    <Button
-        android:id="@+id/buttonRecall"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="MR"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="62dp" />
-
-    <Button
-        android:id="@+id/buttonFraction"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="1/x"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="305dp"
-        tools:layout_editor_absoluteY="257dp" />
-
-    <Button
-        android:id="@+id/buttonDivide"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="/"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="235dp"
-        tools:layout_editor_absoluteY="192dp" />
-
-    <Button
-        android:id="@+id/buttonPercent"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="%"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="305dp"
-        tools:layout_editor_absoluteY="192dp" />
-
-    <Button
-        android:id="@+id/buttonBack"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="<-"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="127dp" />
-
-    <Button
-        android:id="@+id/buttonStore"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="MS"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="62dp" />
-
-    <Button
-        android:id="@+id/buttonClear"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="MC"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="62dp" />
-
-    <Button
-        android:id="@+id/buttonRemove"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="M-"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="305dp"
-        tools:layout_editor_absoluteY="62dp" />
-
-    <Button
-        android:id="@+id/buttonSix"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#AC5454"
-        android:text="6"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="257dp" />
-
-    <Button
-        android:id="@+id/buttonMultiply"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="*"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="235dp"
-        tools:layout_editor_absoluteY="257dp" />
-
-    <Button
-        android:id="@+id/buttonDelete"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="CE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="127dp" />
-
-    <Button
-        android:id="@+id/buttonNine"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#AC5454"
-        android:text="9"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="192dp" />
-
-    <Button
-        android:id="@+id/buttonEight"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#AC5454"
-        android:text="8"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="192dp" />
-
-    <Button
-        android:id="@+id/buttonEmpty"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="C"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="127dp" />
-
-    <Button
-        android:id="@+id/buttonRoot"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#803A3A"
-        android:text="√"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="305dp"
-        tools:layout_editor_absoluteY="127dp" />
-
-    <Button
-        android:id="@+id/buttonSeven"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#AC5454"
-        android:text="7"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="192dp" />
-
-    <Button
-        android:id="@+id/buttonFour"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#AC5454"
-        android:text="4"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="257dp" />
-
-    <Button
-        android:id="@+id/buttonCount"
-        android:layout_width="70dp"
-        android:layout_height="131dp"
-        android:backgroundTint="#803A3A"
-        android:text="="
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="281dp"
-        tools:layout_editor_absoluteY="519dp" />
-
     <TableLayout
-        android:layout_width="409dp"
-        android:layout_height="276dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="454dp">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/MainScreen"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_span="5"
+                android:background="#323131"
+                android:backgroundTint="#979797"
+                android:gravity="bottom|right"
+                android:text="0"
+                android:textIsSelectable="false"
+                android:textSize="48sp"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
+            <Button
+                android:id="@+id/buttonClear"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="MC"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonRecall"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="MR"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonStore"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="MS"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonAdd"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="M+"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonRemove"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="M-"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonBack"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="←"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonDelete"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="CE"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonEmpty"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="C"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonModule"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:enabled="false"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="±"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonRoot"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:enabled="false"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="√"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonSeven"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#AC5454"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="7"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonEight"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#AC5454"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonNine"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#AC5454"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="9"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonDivide"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:enabled="false"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="/"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonPercent"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="%"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonFour"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#AC5454"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="4"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonFive"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#AC5454"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="5"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonSix"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#AC5454"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="6"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonMultiply"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:enabled="false"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="*"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonFraction"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:backgroundTint="#803A3A"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="1/x"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
 
             <Button
                 android:id="@+id/buttonOne"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
@@ -330,6 +320,7 @@
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
@@ -341,6 +332,7 @@
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
@@ -352,22 +344,45 @@
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
+                android:enabled="false"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="-"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/buttonCount"
+                android:layout_width="70dp"
+                android:layout_height="130dp"
+                android:layout_gravity="fill"
+                android:layout_span="1"
+                android:layout_weight="2"
+                android:backgroundTint="#803A3A"
+                android:enabled="false"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="="
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_width="323dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="-65dp">
 
             <Button
                 android:id="@+id/buttonZero"
                 android:layout_width="140dp"
                 android:layout_height="65dp"
+                android:layout_span="2"
                 android:backgroundTint="#AC5454"
+                android:enabled="false"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="0"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
@@ -379,6 +394,7 @@
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="."
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
@@ -390,6 +406,8 @@
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
+                android:enabled="false"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="+"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
@@ -397,6 +415,7 @@
                 app:cornerRadius="10dp" />
 
         </TableRow>
+
     </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
