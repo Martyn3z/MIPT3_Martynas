@@ -10,8 +10,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView Result;
-    private String Memory;
-    private boolean dotActive = false;
+    private float FinalResult = 0;
+    private String Memory, Temp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button EmptyAll = findViewById(R.id.buttonEmpty);
         Button Empty = findViewById(R.id.buttonDelete);
         Button Delete = findViewById(R.id.buttonBack);
+        Button Plus = findViewById(R.id.buttonPlus);
+        Button Count = findViewById(R.id.buttonCount);
 
         Result = findViewById(R.id.MainScreen);
 
@@ -49,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Delete.setOnClickListener(this);
         EmptyAll.setOnClickListener(this);
         Empty.setOnClickListener(this);
+        Plus.setOnClickListener(this);
+        Count.setOnClickListener(this);
     }
 
     public void onClick(View v)
@@ -57,6 +62,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if ((Result.getText()).charAt(0) == '0' && (findViewById(R.id.buttonDot)).isEnabled() == true) {
             (findViewById(R.id.buttonZero)).setEnabled(true);
+            (findViewById(R.id.buttonEmpty)).setEnabled(true);
+            (findViewById(R.id.buttonDelete)).setEnabled(true);
+            (findViewById(R.id.buttonBack)).setEnabled(true);
+            (findViewById(R.id.buttonDot)).setEnabled(true);
+
+
             switch (v.getId()) {
                 case R.id.buttonOne:
                     Result.setText("1");
@@ -86,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Result.setText("9");
                     break;
                 case R.id.buttonDot:
-                    Result.setText(Result.getText() + ",");
+                    Result.setText(Result.getText() + ".");
                     (findViewById(R.id.buttonDot)).setEnabled(false);
                     break;
             }
@@ -124,23 +135,55 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Result.setText(Result.getText() + "9");
                     break;
                 case R.id.buttonBack:
-                    if ((Result.getText()).length() > 0) {
+                    if ((Result.getText()).charAt((Result.getText()).length() -1) == '.')
+                        (findViewById(R.id.buttonDot)).setEnabled(true);
+                    if ((Result.getText()).length() > 1 && (Result.getText()).charAt((Result.getText()).length() -1) != '.') {
                         ResultString = ResultString.substring(0, ResultString.length() - 1);
                         Result.setText(ResultString);
+                        (findViewById(R.id.buttonZero)).setEnabled(true);
                     }
-                    else
+                    else {
                         Result.setText("0");
+                        (findViewById(R.id.buttonZero)).setEnabled(false);
+                        (findViewById(R.id.buttonBack)).setEnabled(false);
+                        (findViewById(R.id.buttonDelete)).setEnabled(false);
+                        (findViewById(R.id.buttonBack)).setEnabled(false);
+                    }
                     break;
                 case R.id.buttonEmpty:
                     Memory = "0";
                     Result.setText("0");
+                    (findViewById(R.id.buttonBack)).setEnabled(false);
+                    (findViewById(R.id.buttonZero)).setEnabled(false);
+                    (findViewById(R.id.buttonEmpty)).setEnabled(false);
+                    (findViewById(R.id.buttonDelete)).setEnabled(false);
+                    (findViewById(R.id.buttonDot)).setEnabled(true);
                     break;
                 case R.id.buttonDelete:
                     Result.setText("0");
+                    (findViewById(R.id.buttonBack)).setEnabled(false);
+                    (findViewById(R.id.buttonZero)).setEnabled(false);
+                    (findViewById(R.id.buttonDelete)).setEnabled(false);
+                    (findViewById(R.id.buttonDot)).setEnabled(true);
                     break;
                 case R.id.buttonDot:
-                    Result.setText(Result.getText() + ",");
+                    Result.setText(Result.getText() + ".");
                     (findViewById(R.id.buttonDot)).setEnabled(false);
+                    break;
+                case R.id.buttonPlus:
+                    if ((Result.getText()).charAt((Result.getText()).length() - 1) != '.') {
+                        FinalResult = FinalResult + Float.parseFloat((Result.getText()).toString());
+                    }
+                    else {
+                        ResultString = ResultString.substring(0, ResultString.length() - 1);
+                        Result.setText(ResultString);
+                        FinalResult = FinalResult + Float.parseFloat((Result.getText()).toString());
+                    }
+                    break;
+                case R.id.buttonCount:
+                    Result.setText(Float.toString(FinalResult));
+                    FinalResult = FinalResult + Float.parseFloat((Result.getText()).toString());
+
                     break;
             }
         }
