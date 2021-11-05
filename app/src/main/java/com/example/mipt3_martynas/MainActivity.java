@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView Result;
     private float FinalResult = 0;
     private String Memory, Temp;
+    boolean OperatorToggle = false, IsActionDone = false;
 
 
     @Override
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button Delete = findViewById(R.id.buttonBack);
         Button Plus = findViewById(R.id.buttonPlus);
         Button Count = findViewById(R.id.buttonCount);
+        Button Divide = findViewById(R.id.buttonDivide);
+        Button Root = findViewById(R.id.buttonRoot);
 
         Result = findViewById(R.id.MainScreen);
 
@@ -54,19 +57,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Empty.setOnClickListener(this);
         Plus.setOnClickListener(this);
         Count.setOnClickListener(this);
+        Divide.setOnClickListener(this);
+        Root.setOnClickListener(this);
+    }
+
+    public void checkIfZero()
+    {
+        String ResultString = (String) Result.getText();
+        if ((Result.getText()).charAt((Result.getText()).length() - 1) == '.' || (Result.getText()).charAt((Result.getText()).length()) == '0') {
+            ResultString = ResultString.substring(0, ResultString.length() - 1);
+            Result.setText(ResultString);
+        }
     }
 
     public void onClick(View v)
     {
         String ResultString = (String) Result.getText();
 
-        if ((Result.getText()).charAt(0) == '0' && (findViewById(R.id.buttonDot)).isEnabled() == true) {
+        if ((Result.getText()).charAt(0) == '0' && (findViewById(R.id.buttonDot)).isEnabled() == true || IsActionDone == true || Result.getText() == "NaN") {
             (findViewById(R.id.buttonZero)).setEnabled(true);
             (findViewById(R.id.buttonEmpty)).setEnabled(true);
             (findViewById(R.id.buttonDelete)).setEnabled(true);
             (findViewById(R.id.buttonBack)).setEnabled(true);
             (findViewById(R.id.buttonDot)).setEnabled(true);
-
+            (findViewById(R.id.buttonRoot)).setEnabled(true);
+            (findViewById(R.id.buttonDivide)).setEnabled(true);
+            IsActionDone = false;
 
             switch (v.getId()) {
                 case R.id.buttonOne:
@@ -99,6 +115,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case R.id.buttonDot:
                     Result.setText(Result.getText() + ".");
                     (findViewById(R.id.buttonDot)).setEnabled(false);
+                    break;
+                case R.id.buttonDivide:
+                    if ((Result.getText().toString()) == "0")
+                        Result.setText("NaN");
                     break;
             }
         }
@@ -150,9 +170,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         (findViewById(R.id.buttonBack)).setEnabled(false);
                     }
                     break;
+                case R.id.buttonDivide:
+                    if ((Result.getText().toString()) == "0")
+                        Result.setText("NaN");
+                    break;
+
                 case R.id.buttonEmpty:
                     Memory = "0";
                     Result.setText("0");
+                    FinalResult = 0;
                     (findViewById(R.id.buttonBack)).setEnabled(false);
                     (findViewById(R.id.buttonZero)).setEnabled(false);
                     (findViewById(R.id.buttonEmpty)).setEnabled(false);
@@ -161,6 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case R.id.buttonDelete:
                     Result.setText("0");
+                    FinalResult = 0;
                     (findViewById(R.id.buttonBack)).setEnabled(false);
                     (findViewById(R.id.buttonZero)).setEnabled(false);
                     (findViewById(R.id.buttonDelete)).setEnabled(false);
@@ -171,23 +198,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     (findViewById(R.id.buttonDot)).setEnabled(false);
                     break;
                 case R.id.buttonPlus:
-                    if ((Result.getText()).charAt((Result.getText()).length() - 1) != '.') {
-                        FinalResult = FinalResult + Float.parseFloat((Result.getText()).toString());
+                    IsActionDone = true;
+
+                    Result.setText("0");
+
+                    if (OperatorToggle) {
+                        OperatorToggle = false;
+                        FinalResult = FinalResult + Float.valueOf((Result.getText()).toString());
+                        Result.setText(Float.toString(FinalResult));
                     }
-                    else {
-                        ResultString = ResultString.substring(0, ResultString.length() - 1);
-                        Result.setText(ResultString);
-                        FinalResult = FinalResult + Float.parseFloat((Result.getText()).toString());
+                    else
+                    {
+                        OperatorToggle = true;
+                        FinalResult = Float.valueOf((Result.getText()).toString());
+                        Result.setText("0");
                     }
                     break;
                 case R.id.buttonCount:
                     Result.setText(Float.toString(FinalResult));
-                    FinalResult = FinalResult + Float.parseFloat((Result.getText()).toString());
 
                     break;
             }
         }
-
-
     }
 }
