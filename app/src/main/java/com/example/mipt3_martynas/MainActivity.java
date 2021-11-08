@@ -10,9 +10,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView Result;
-    private float FinalResult = 0;
-    private String Memory, Temp;
-    boolean OperatorToggle = false, IsActionDone = false;
+    private float FinalResult = 0, Memory = 0;
+    boolean OperatorToggle = false, IsActionDone = false, SumOn = false;
 
 
     @Override
@@ -38,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button Count = findViewById(R.id.buttonCount);
         Button Divide = findViewById(R.id.buttonDivide);
         Button Root = findViewById(R.id.buttonRoot);
+        Button Sign = findViewById(R.id.buttonSign);
+        Button Multiply = findViewById(R.id.buttonMultiply);
+        Button Minus = findViewById(R.id.buttonMinus);
 
         Result = findViewById(R.id.MainScreen);
 
@@ -59,101 +61,77 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Count.setOnClickListener(this);
         Divide.setOnClickListener(this);
         Root.setOnClickListener(this);
-    }
-
-    public void checkIfZero()
-    {
-        String ResultString = (String) Result.getText();
-        if ((Result.getText()).charAt((Result.getText()).length() - 1) == '.' || (Result.getText()).charAt((Result.getText()).length()) == '0') {
-            ResultString = ResultString.substring(0, ResultString.length() - 1);
-            Result.setText(ResultString);
-        }
+        Sign.setOnClickListener(this);
+        Minus.setOnClickListener(this);
+        Multiply.setOnClickListener(this);
     }
 
     public void onClick(View v)
     {
         String ResultString = (String) Result.getText();
 
-        if ((Result.getText()).charAt(0) == '0' && (findViewById(R.id.buttonDot)).isEnabled() == true || IsActionDone == true || Result.getText() == "NaN") {
+        if ((Result.getText()).charAt(0) == '0' && (findViewById(R.id.buttonDot)).isEnabled() || IsActionDone || Result.getText() == "NaN" || SumOn)
+        {
             (findViewById(R.id.buttonZero)).setEnabled(true);
             (findViewById(R.id.buttonEmpty)).setEnabled(true);
             (findViewById(R.id.buttonDelete)).setEnabled(true);
             (findViewById(R.id.buttonBack)).setEnabled(true);
-            (findViewById(R.id.buttonDot)).setEnabled(true);
             (findViewById(R.id.buttonRoot)).setEnabled(true);
             (findViewById(R.id.buttonDivide)).setEnabled(true);
+            (findViewById(R.id.buttonDot)).setEnabled(true);
+            (findViewById(R.id.buttonSign)).setEnabled(true);
+            (findViewById(R.id.buttonCount)).setEnabled(true);
+            (findViewById(R.id.buttonPlus)).setEnabled(true);
+            (findViewById(R.id.buttonMinus)).setEnabled(true);
+            (findViewById(R.id.buttonDivide)).setEnabled(true);
+            (findViewById(R.id.buttonMultiply)).setEnabled(true);
+            (findViewById(R.id.buttonSign)).setEnabled(true);
+
+            SumOn = false;
             IsActionDone = false;
 
             switch (v.getId()) {
+                case R.id.buttonZero:
+                    Result.setText("0");
+                    break;
+
                 case R.id.buttonOne:
                     Result.setText("1");
                     break;
+
                 case R.id.buttonTwo:
                     Result.setText("2");
                     break;
+
                 case R.id.buttonThree:
                     Result.setText("3");
                     break;
+
                 case R.id.buttonFour:
                     Result.setText("4");
                     break;
+
                 case R.id.buttonFive:
                     Result.setText("5");
                     break;
+
                 case R.id.buttonSix:
                     Result.setText("6");
                     break;
+
                 case R.id.buttonSeven:
                     Result.setText("7");
                     break;
+
                 case R.id.buttonEight:
                     Result.setText("8");
                     break;
+
                 case R.id.buttonNine:
                     Result.setText("9");
                     break;
-                case R.id.buttonDot:
-                    Result.setText(Result.getText() + ".");
-                    (findViewById(R.id.buttonDot)).setEnabled(false);
-                    break;
-                case R.id.buttonDivide:
-                    if ((Result.getText().toString()) == "0")
-                        Result.setText("NaN");
-                    break;
-            }
-        }
-        else {
-            switch (v.getId()) {
-                case R.id.buttonZero:
-                    Result.setText(Result.getText() + "0");
-                    break;
-                case R.id.buttonOne:
-                    Result.setText(Result.getText() + "1");
-                    break;
-                case R.id.buttonTwo:
-                    Result.setText(Result.getText() + "2");
-                    break;
-                case R.id.buttonThree:
-                    Result.setText(Result.getText() + "3");
-                    break;
-                case R.id.buttonFour:
-                    Result.setText(Result.getText() + "4");
-                    break;
-                case R.id.buttonFive:
-                    Result.setText(Result.getText() + "5");
-                    break;
-                case R.id.buttonSix:
-                    Result.setText(Result.getText() + "6");
-                    break;
-                case R.id.buttonSeven:
-                    Result.setText(Result.getText() + "7");
-                    break;
-                case R.id.buttonEight:
-                    Result.setText(Result.getText() + "8");
-                    break;
-                case R.id.buttonNine:
-                    Result.setText(Result.getText() + "9");
-                    break;
+
+
                 case R.id.buttonBack:
                     if ((Result.getText()).charAt((Result.getText()).length() -1) == '.')
                         (findViewById(R.id.buttonDot)).setEnabled(true);
@@ -170,13 +148,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         (findViewById(R.id.buttonBack)).setEnabled(false);
                     }
                     break;
-                case R.id.buttonDivide:
-                    if ((Result.getText().toString()) == "0")
-                        Result.setText("NaN");
-                    break;
 
                 case R.id.buttonEmpty:
-                    Memory = "0";
+                    Memory = 0;
                     Result.setText("0");
                     FinalResult = 0;
                     (findViewById(R.id.buttonBack)).setEnabled(false);
@@ -185,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     (findViewById(R.id.buttonDelete)).setEnabled(false);
                     (findViewById(R.id.buttonDot)).setEnabled(true);
                     break;
+
                 case R.id.buttonDelete:
                     Result.setText("0");
                     FinalResult = 0;
@@ -193,30 +168,232 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     (findViewById(R.id.buttonDelete)).setEnabled(false);
                     (findViewById(R.id.buttonDot)).setEnabled(true);
                     break;
+
                 case R.id.buttonDot:
                     Result.setText(Result.getText() + ".");
                     (findViewById(R.id.buttonDot)).setEnabled(false);
                     break;
-                case R.id.buttonPlus:
-                    IsActionDone = true;
 
+                case R.id.buttonMinus:
+                    if (!SumOn)
+                        FinalResult = FinalResult - Float.parseFloat((Result.getText()).toString());
                     Result.setText("0");
+                    break;
 
-                    if (OperatorToggle) {
-                        OperatorToggle = false;
-                        FinalResult = FinalResult + Float.valueOf((Result.getText()).toString());
-                        Result.setText(Float.toString(FinalResult));
+                case R.id.buttonPlus:
+                    if (!SumOn)
+                    FinalResult = FinalResult + Float.parseFloat((Result.getText()).toString());
+                    Result.setText("0");
+                    break;
+
+                case R.id.buttonMultiply:
+                    if (FinalResult == 0)
+                        FinalResult = Float.parseFloat((Result.getText()).toString());
+                    else {
+                        IsActionDone = true;
+                        FinalResult = FinalResult * Float.parseFloat((Result.getText()).toString());
                     }
-                    else
-                    {
-                        OperatorToggle = true;
-                        FinalResult = Float.valueOf((Result.getText()).toString());
+                    Result.setText("0");
+                    break;
+
+                case R.id.buttonDivide:
+                    if (Result.getText().toString().equals("0"))
+                        Result.setText("NaN");
+                    else {
+                        if (FinalResult == 0)
+                            FinalResult = Float.parseFloat((Result.getText()).toString());
+                        else {
+                            IsActionDone = true;
+                            FinalResult = FinalResult / Float.parseFloat((Result.getText()).toString());
+                        }
                         Result.setText("0");
                     }
                     break;
+
                 case R.id.buttonCount:
+                    (findViewById(R.id.buttonPlus)).setEnabled(false);
+                    (findViewById(R.id.buttonMinus)).setEnabled(false);
+                    (findViewById(R.id.buttonDivide)).setEnabled(false);
+                    (findViewById(R.id.buttonMultiply)).setEnabled(false);
+                    (findViewById(R.id.buttonDot)).setEnabled(false);
+
+                    if (FinalResult == 0)
+                    {
+                        FinalResult = Float.parseFloat((Result.getText()).toString());
+                    }
+                    Result.setText(Float.toString(FinalResult));
+                    (findViewById(R.id.buttonCount)).setEnabled(false);
+                    SumOn = true;
+                    break;
+
+                case R.id.buttonRoot:
+                    if (Float.parseFloat(Result.getText().toString()) < 0)
+                        Result.setText("NaN");
+                    else
+                        Result.setText(Float.toString(((float) Math.sqrt(Float.parseFloat(Result.getText().toString())))));
+                    break;
+
+                case R.id.buttonSign:
+                    (findViewById(R.id.buttonDot)).setEnabled(false);
+
+                    FinalResult = FinalResult * -1;
                     Result.setText(Float.toString(FinalResult));
 
+                    SumOn = true;
+                    break;
+            }
+
+        }
+        else {
+            switch (v.getId()) {
+                case R.id.buttonZero:
+                    Result.setText(Result.getText() + "0");
+                    break;
+
+                case R.id.buttonOne:
+                    Result.setText(Result.getText() + "1");
+                    break;
+
+                case R.id.buttonTwo:
+                    Result.setText(Result.getText() + "2");
+                    break;
+
+                case R.id.buttonThree:
+                    Result.setText(Result.getText() + "3");
+                    break;
+
+                case R.id.buttonFour:
+                    Result.setText(Result.getText() + "4");
+                    break;
+
+                case R.id.buttonFive:
+                    Result.setText(Result.getText() + "5");
+                    break;
+
+                case R.id.buttonSix:
+                    Result.setText(Result.getText() + "6");
+                    break;
+
+                case R.id.buttonSeven:
+                    Result.setText(Result.getText() + "7");
+                    break;
+
+                case R.id.buttonEight:
+                    Result.setText(Result.getText() + "8");
+                    break;
+
+                case R.id.buttonNine:
+                    Result.setText(Result.getText() + "9");
+                    break;
+
+                case R.id.buttonBack:
+                    if ((Result.getText()).charAt((Result.getText()).length() -1) == '.')
+                        (findViewById(R.id.buttonDot)).setEnabled(true);
+                    if ((Result.getText()).length() > 1 && (Result.getText()).charAt((Result.getText()).length() -1) != '.') {
+                        ResultString = ResultString.substring(0, ResultString.length() - 1);
+                        Result.setText(ResultString);
+                        (findViewById(R.id.buttonZero)).setEnabled(true);
+                    }
+                    else {
+                        Result.setText("0");
+                        (findViewById(R.id.buttonZero)).setEnabled(false);
+                        (findViewById(R.id.buttonBack)).setEnabled(false);
+                        (findViewById(R.id.buttonDelete)).setEnabled(false);
+                        (findViewById(R.id.buttonBack)).setEnabled(false);
+                    }
+                    break;
+
+                case R.id.buttonEmpty:
+                    Memory = 0;
+                    Result.setText("0");
+                    FinalResult = 0;
+                    (findViewById(R.id.buttonBack)).setEnabled(false);
+                    (findViewById(R.id.buttonZero)).setEnabled(false);
+                    (findViewById(R.id.buttonEmpty)).setEnabled(false);
+                    (findViewById(R.id.buttonDelete)).setEnabled(false);
+                    (findViewById(R.id.buttonDot)).setEnabled(true);
+                    break;
+
+                case R.id.buttonDelete:
+                    Result.setText("0");
+                    FinalResult = 0;
+                    (findViewById(R.id.buttonBack)).setEnabled(false);
+                    (findViewById(R.id.buttonZero)).setEnabled(false);
+                    (findViewById(R.id.buttonDelete)).setEnabled(false);
+                    (findViewById(R.id.buttonDot)).setEnabled(true);
+                    break;
+
+                case R.id.buttonDot:
+                    Result.setText(Result.getText() + ".");
+                    (findViewById(R.id.buttonDot)).setEnabled(false);
+                    break;
+
+                case R.id.buttonMultiply:
+                    if (FinalResult == 0)
+                        FinalResult = Float.parseFloat((Result.getText()).toString());
+                    else {
+                        IsActionDone = true;
+                        FinalResult = FinalResult * Float.parseFloat((Result.getText()).toString());
+                    }
+                    Result.setText("0");
+                    break;
+
+                case R.id.buttonMinus:
+                    IsActionDone = true;
+                    FinalResult = FinalResult - Float.parseFloat((Result.getText()).toString());
+                    Result.setText("0");
+                    break;
+
+                case R.id.buttonPlus:
+                    IsActionDone = true;
+                    FinalResult = FinalResult + Float.parseFloat((Result.getText()).toString());
+                    Result.setText("0");
+                    break;
+
+                case R.id.buttonRoot:
+                    IsActionDone = true;
+                    if (Float.parseFloat(Result.getText().toString()) < 0)
+                        Result.setText("NaN");
+                    else
+                        Result.setText(Float.toString(((float) Math.sqrt(Float.parseFloat(Result.getText().toString())))));
+                    break;
+
+                case R.id.buttonDivide:
+                    if (Result.getText().toString().equals("0"))
+                        Result.setText("NaN");
+                    else {
+                        if (FinalResult == 0)
+                            FinalResult = Float.parseFloat((Result.getText()).toString());
+                        else {
+                            IsActionDone = true;
+                            FinalResult = FinalResult / Float.parseFloat((Result.getText()).toString());
+                        }
+                        Result.setText("0");
+                    }
+                    break;
+
+                case R.id.buttonCount:
+                    (findViewById(R.id.buttonPlus)).setEnabled(false);
+                    (findViewById(R.id.buttonMinus)).setEnabled(false);
+                    (findViewById(R.id.buttonDivide)).setEnabled(false);
+                    (findViewById(R.id.buttonMultiply)).setEnabled(false);
+                    (findViewById(R.id.buttonDot)).setEnabled(false);
+
+                    if (FinalResult == 0)
+                    {
+                        FinalResult = Float.parseFloat((Result.getText()).toString());
+                    }
+                    Result.setText(Float.toString(FinalResult));
+                    SumOn = true;
+                    (findViewById(R.id.buttonCount)).setEnabled(false);
+                    break;
+
+                case R.id.buttonSign:
+                    (findViewById(R.id.buttonDot)).setEnabled(false);
+
+                    Result.setText(Float.toString(Float.parseFloat((Result.getText()).toString()) * -1));
+
+                    SumOn = true;
                     break;
             }
         }

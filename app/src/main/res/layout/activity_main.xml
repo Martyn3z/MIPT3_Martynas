@@ -30,7 +30,7 @@
                 android:background="#323131"
                 android:backgroundTint="#979797"
                 android:gravity="bottom|end"
-                android:text="0"
+                android:text="@string/_0"
                 android:textIsSelectable="false"
                 android:textSize="48sp"
                 android:textStyle="bold" />
@@ -42,11 +42,13 @@
 
             <Button
                 android:id="@+id/buttonClear"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
+                android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="MC"
+                android:text="@string/mc"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -54,11 +56,13 @@
 
             <Button
                 android:id="@+id/buttonRecall"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
+                android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="MR"
+                android:text="@string/mr"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -66,11 +70,13 @@
 
             <Button
                 android:id="@+id/buttonStore"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
+                android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="MS"
+                android:text="@string/ms"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -78,11 +84,13 @@
 
             <Button
                 android:id="@+id/buttonAdd"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
+                android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="M+"
+                android:text="@string/mPlus"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -90,11 +98,13 @@
 
             <Button
                 android:id="@+id/buttonRemove"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
+                android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="M-"
+                android:text="@string/mMinus"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -107,11 +117,12 @@
 
             <Button
                 android:id="@+id/buttonBack"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="←"
+                android:text="@string/Back"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -119,11 +130,12 @@
 
             <Button
                 android:id="@+id/buttonDelete"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="CE"
+                android:text="@string/ce"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -131,24 +143,26 @@
 
             <Button
                 android:id="@+id/buttonEmpty"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="C"
+                android:text="@string/c"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
 
             <Button
-                android:id="@+id/buttonModule"
+                android:id="@+id/buttonSign"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
                 android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="±"
+                android:text="@string/PlusMinus"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -156,12 +170,13 @@
 
             <Button
                 android:id="@+id/buttonRoot"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
                 android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="√"
+                android:text="@string/Root"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -174,11 +189,12 @@
 
             <Button
                 android:id="@+id/buttonSeven"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="7"
+                android:text="@string/_7"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -186,11 +202,12 @@
 
             <Button
                 android:id="@+id/buttonEight"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="8"
+                android:text="@string/_8"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -198,11 +215,12 @@
 
             <Button
                 android:id="@+id/buttonNine"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="9"
+                android:text="@string/_9"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -210,12 +228,13 @@
 
             <Button
                 android:id="@+id/buttonDivide"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#C87575"
                 android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="/"
+                android:text="@string/Divide"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -223,11 +242,13 @@
 
             <Button
                 android:id="@+id/buttonPercent"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
+                android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="%"
+                android:text="@string/Percent"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -240,11 +261,12 @@
 
             <Button
                 android:id="@+id/buttonFour"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="4"
+                android:text="@string/_4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -252,11 +274,12 @@
 
             <Button
                 android:id="@+id/buttonFive"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="5"
+                android:text="@string/_5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -264,11 +287,12 @@
 
             <Button
                 android:id="@+id/buttonSix"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="6"
+                android:text="@string/_6"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -276,12 +300,13 @@
 
             <Button
                 android:id="@+id/buttonMultiply"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#C87575"
                 android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="*"
+                android:text="@string/Multiply"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -289,11 +314,13 @@
 
             <Button
                 android:id="@+id/buttonFraction"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#803A3A"
+                android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="1/x"
+                android:text="@string/_1_x"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -306,11 +333,12 @@
 
             <Button
                 android:id="@+id/buttonOne"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="1"
+                android:text="@string/_1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -318,11 +346,12 @@
 
             <Button
                 android:id="@+id/buttonTwo"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="2"
+                android:text="@string/_2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -330,11 +359,12 @@
 
             <Button
                 android:id="@+id/buttonThree"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="3"
+                android:text="@string/_3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -342,12 +372,13 @@
 
             <Button
                 android:id="@+id/buttonMinus"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#C87575"
                 android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="-"
+                android:text="@string/Minus"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -355,6 +386,7 @@
 
             <Button
                 android:id="@+id/buttonCount"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="130dp"
                 android:layout_gravity="fill"
@@ -363,7 +395,7 @@
                 android:backgroundTint="#803A3A"
                 android:enabled="true"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="="
+                android:text="@string/Equals"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -378,25 +410,28 @@
 
             <Button
                 android:id="@+id/buttonZero"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="140dp"
                 android:layout_height="65dp"
                 android:layout_span="2"
                 android:backgroundTint="#AC5454"
                 android:enabled="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="0"
+                android:text="@string/_0"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="10dp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/buttonDot"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#AC5454"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="."
+                android:text="@string/Dot"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -404,12 +439,13 @@
 
             <Button
                 android:id="@+id/buttonPlus"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="70dp"
                 android:layout_height="65dp"
                 android:backgroundTint="#C87575"
                 android:enabled="true"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="+"
+                android:text="@string/Plus"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="34sp"
                 android:textStyle="bold"
