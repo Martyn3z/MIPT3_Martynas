@@ -340,7 +340,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 case R.id.buttonMinus:
                     IsActionDone = true;
-                    FinalResult = FinalResult - Float.parseFloat((Result.getText()).toString());
+                    if (FinalResult == 0)
+                        FinalResult = Float.parseFloat((Result.getText()).toString());
+                    else
+                        FinalResult = FinalResult - Float.parseFloat((Result.getText()).toString());
                     Result.setText("0");
                     break;
 
